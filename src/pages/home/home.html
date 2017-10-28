@@ -1,0 +1,42 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="assets/doctor.png">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    
+    
+  <div class="block_wrap">
+
+      
+
+      <ion-row>
+        <ion-col col-6 *ngFor="let data of ext_put_data; let i = index;">
+            <div class="deises-details" (click)="nextPage(data.cat_id, data.cat_name)"><!-- (click)="alert('hi')" -->
+                <div class="abs-wrap">
+                  <div class="pic">
+                   <img class="circle responsive-img" alt="{data.cat_name}}" src="{{data.cat_img}}">
+                </div>
+                <div class="dcont"><span>{{data.cat_subname}}</span><h3>{{data.cat_name}}</h3></div>
+                </div>
+                
+            </div>
+           </ion-col> 
+      </ion-row>  
+    </div> 
+    
+</ion-content>
